@@ -1,0 +1,96 @@
+/* =========================
+   Rooms List
+========================= */
+.rooms-area {
+  margin-top: 20px;
+}
+
+.rooms-area h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  border-left: 5px solid #003a8f;
+  padding-left: 10px;
+}
+
+/* =========================
+   Room List Layout
+========================= */
+.room-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* =========================
+   Room Card
+========================= */
+.room-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.room-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  color: #003a8f;
+}
+
+.room-card p {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* =========================
+   Buttons
+========================= */
+.room-card a {
+  text-align: center;
+  margin-top: 10px;
+  padding: 8px 0;
+  font-size: 0.9rem;
+  border-radius: 4px;
+}
+
+/* 詳細を見る */
+.btn-detail {
+  border: 1px solid #003a8f;
+  color: #003a8f;
+  background-color: #fff;
+}
+
+.btn-detail:hover {
+  background-color: #f0f3f8;
+}
+
+/* 予約する（メイン） */
+.btn-reserve {
+  background-color: #003a8f;
+  color: #fff;
+}
+
+.btn-reserve:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   Empty Message
+========================= */
+.rooms-area > p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-top: 20px;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+  .room-list {
+    grid-template-columns: 1fr;
+  }
+}

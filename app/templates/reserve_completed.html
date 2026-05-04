@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}予約完了{% endblock %}
+
+{% block content %}
+<section class="plan-area">
+  <div class="reserve-card">
+    <h2 class="reserve-title">予約が完了しました！</h2>
+
+    <ul>
+      <li>予約番号：{{ reservation_id }}</li>
+      <li>部屋名：{{ room_name_display }}</li>
+      <li>チェックイン：{{ checkin_date }}</li>
+      <li>チェックアウト：{{ checkout_date }}</li>
+      <li>人数：{{ people }} 人</li>
+      <li>お名前：{{ name }}</li>
+      <li>合計金額：<strong>{{ total_price | number_format }} 円</strong></li>
+    </ul>
+
+    <p class="reserve-msg">ご予約ありがとうございます。内容をご確認の上、ご来館ください。</p>
+
+    <div class="reserve-return">
+      <a href="{{ url_for('top') }}" class="reserve-btn">トップページに戻る</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

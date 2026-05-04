@@ -1,0 +1,13 @@
+.reserve_list-container {
+  padding: 30px 0;
+}
+
+.reserve_list-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.reserve_list-table th,
+.reserve_list-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ccc;
+}

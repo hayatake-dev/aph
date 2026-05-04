@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}{{ room.name }} の予約{% endblock %}
+
+{% block content %}
+<section class="reserve-area">
+  <div class="reserve-card">
+    <h2 class="reserve-title">{{ room.name }} の予約</h2>
+
+    <form method="post">
+      <div class="form-group">
+        <label>プランを選択</label>
+        <select name="plan_id" required>
+          {% for plan in plans %}
+            <option value="{{ plan.id }}">{{ plan.plan_name }} (+{{ plan.price_modifier }}円)</option>
+          {% endfor %}
+        </select> 
+      </div>
+
+      <div class="form-group">
+        <label>チェックイン日</label>
+        <input type="date" name="checkin" value="{{ request.args.get('checkin', '') }}" required>
+      </div>
+
+      <div class="form-group">
+        <label>チェックアウト日</label>
+        <input type="date" name="checkout" value="{{ request.args.get('checkout', '') }}" required>
+      </div>
+
+      <div class="form-group">
+        <label>人数</label>
+        <input type="number" name="people" min="1" value="{{ request.args.get('people', 1) }}" required>
+      </div>
+
+      {% if not session.get('user_id') %}
+      <div class="form-group">
+        <label>お名前</label>
+        <input type="text" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label>メールアドレス</label>
+        <input type="email" name="email" required>
+      </div>
+      {% endif %}
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" name="breakfast" value="on"> 朝食付き (+1000円/人)
+        </label>
+      </div>
+
+      <button type="submit" class="reserve-btn">予約内容を確認</button>
+    </form>
+
+    <div class="reserve-return">
+      <a href="{{ url_for('detail', room_id=room.id) }}">← 部屋詳細に戻る</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

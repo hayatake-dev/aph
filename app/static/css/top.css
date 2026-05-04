@@ -1,0 +1,239 @@
+/* =========================
+   Search Area (東横INN風)
+========================= */
+.search-area {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 30px 25px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.search-area h2 {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  border-left: 5px solid #003a8f;
+  padding-left: 12px;
+  color: #003a8f;
+}
+
+/* =========================
+   Search Form
+========================= */
+.search-form {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.search-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #333;
+  min-width: 160px;
+}
+
+.search-form input {
+  margin-top: 6px;
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-width: 140px;
+}
+
+.search-form input[type="date"]::-webkit-inner-spin-button,
+.search-form input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+.search-form button {
+  height: 42px;
+  padding: 0 25px;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #003a8f;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.search-form button:hover {
+  background-color: #002766;
+}
+
+/* =========================
+   Rooms Area
+========================= */
+.rooms-area h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  border-left: 5px solid #003a8f;
+  padding-left: 10px;
+}
+
+.rooms-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* =========================
+   Room Card
+========================= */
+.room-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+}
+
+.room-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.room-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.room-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #003a8f;
+}
+
+.room-card p {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+
+.room-card .btn-detail,
+.room-card .btn-reserve {
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+.room-card .btn-detail {
+  border: 1px solid #003a8f;
+  color: #003a8f;
+}
+
+.room-card .btn-reserve {
+  background-color: #003a8f;
+  color: #fff;
+}
+
+/* =========================
+   Recommend Restaurants
+========================= */
+.recommend-area h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  border-left: 5px solid #003a8f;
+  padding-left: 10px;
+}
+
+.restaurant-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.restaurant-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: 0.2s;
+}
+
+.restaurant-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.restaurant-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+.restaurant-info {
+  padding: 10px;
+}
+
+.restaurant-info h4 {
+  margin: 0 0 6px 0;
+  font-size: 1rem;
+  color: #003a8f;
+}
+
+.restaurant-info p {
+  margin: 2px 0;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.tags {
+  margin-top: 6px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+  border-radius: 3px;
+  color: #fff;
+  margin-right: 4px;
+}
+
+.tag.volume {
+  background-color: #f39c12;
+}
+
+.tag.healthy {
+  background-color: #27ae60;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+  .search-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-form label,
+  .search-form input,
+  .search-form button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .search-form button {
+    margin-top: 10px;
+  }
+
+  .rooms-container, .restaurant-list {
+    grid-template-columns: 1fr;
+  }
+}

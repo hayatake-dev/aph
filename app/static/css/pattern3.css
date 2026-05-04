@@ -1,0 +1,148 @@
+/* （現場でもよく使われる「セクションごと＋機能別」構成） */
+/* 1. ディレクトリ構成（推奨） */
+
+/* /static/css/
+│
+├── base/
+│   ├── reset.css
+│   ├── variables.css
+│   └── common.css        ← 全ページ共通レイアウト・タイポ
+│
+├── components/
+│   ├── header.css
+│   ├── footer.css
+│   ├── buttons.css
+│   ├── cards.css         ← “部屋カード”などのデザイン
+│   └── table.css
+│
+├── pages/
+│   ├── home.css
+│   ├── reserve_list.css  ← あなたの「空室一覧」ページ
+│   ├── reserve_form.css
+│   └── mypage.css
+│
+└── style.css             ← 読み込み順をまとめる "だけ" のファイル */
+
+
+/* 2. style.css（最終的に読み込むだけのファイル） */
+/* --- base --- */
+@import url("base/reset.css");
+@import url("base/variables.css");
+@import url("base/common.css");
+
+/* --- components --- */
+@import url("components/header.css");
+@import url("components/footer.css");
+@import url("components/buttons.css");
+@import url("components/cards.css");
+@import url("components/table.css");
+
+/* --- pages (必要なものだけ) --- */
+@import url("pages/reserve_list.css");
+@import url("pages/reserve_form.css");
+
+
+/* 3. ファイル内容の例 */
+/* リセット（現場でよく使われる最小構成）*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* base/variables.css（色・フォント定義） */
+:root {
+  --color-main: #4a6fa5;
+  --color-gray: #666;
+  --color-bg: #f2f2f2;
+  --color-accent: #e74c3c;
+
+  --radius: 8px;
+  --font-main: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* base/common.css（全体レイアウト） */
+html, body {
+  height: 100%;
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  width: 94%;
+  max-width: 1024px;
+  margin: auto;
+}
+.pc-only { display: block; }
+.mobile-only { display: none; }
+
+@media (max-width: 768px) {
+  .pc-only { display: none; }
+  .mobile-only { display: block; }
+}
+
+/* components/buttons.css（共通ボタン） */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn-gray { background: #ccc; color: #333; }
+.btn-red { background: var(--color-accent); color: #fff; }
+.btn-full { width: 100%; }
+
+/* components/cards.css（スマホの部屋カード） */
+.reserve_list-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: var(--radius);
+  box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  margin-bottom: 16px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.room-price { font-weight: bold; }
+
+
+/* components/table.css（PCのテーブル） */
+.reserve_list-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.reserve_list-table th,
+.reserve_list-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* pages/reserve_list.css（空室一覧ページ専用） */
+.reserve_list-container {
+  padding: 24px 0;
+}
+.reserve_list-title {
+  margin-bottom: 20px;
+}
+.reserve_list-no-data {
+  margin-top: 30px;
+  color: var(--color-gray);
+  text-align: center;
+}
+.fallback-info {
+  font-size: 14px;
+  color: var(--color-gray);
+}

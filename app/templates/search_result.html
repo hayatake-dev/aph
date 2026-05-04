@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}空室検索結果{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/result.css') }}">
+{% endblock %}
+
+
+
+{% block content %}
+<section class="search-result-area">
+  <h2>空室検索結果</h2>
+
+  <p>検索条件：{{ checkin }} 〜 {{ checkout }} / 人数：{{ people }} 人</p>
+
+  {% if rooms %}
+    <h3>予約可能な部屋</h3>
+    <div class="room-list">
+      {% for room in rooms %}
+      <div class="room-card">
+        <h3>{{ room.name }}</h3>
+        <p>タイプ：{{ room.type }}</p>
+        <p>定員：{{ room.capacity }} 人</p>
+        <p>料金：{{ room.price | number_format }} 円 / 泊</p>
+        <a href="{{ url_for('detail', room_id=room.id) }}" class="btn-detail">詳細を見る</a>
+        <a href="{{ url_for('reserve', room_id=room.id) }}" class="btn-reserve">予約する</a>
+      </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>予約可能な部屋はありません。</p>
+  {% endif %}
+
+  {% if fallback_rooms %}
+    <h3>条件に合わない部屋</h3>
+    <div class="room-list">
+      {% for room in fallback_rooms %}
+      <div class="room-card unavailable">
+        <h3>{{ room.name }}</h3>
+        <p>タイプ：{{ room.type }}</p>
+        <p>定員：{{ room.capacity }} 人</p>
+        <p>料金：{{ room.price | number_format }} 円 / 泊</p>
+        <p class="note">※この部屋は検索条件に合いません</p>
+      </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="back-search">
+    <a href="{{ url_for('index') }}">← 検索条件を変更する</a>
+  </div>
+</section>
+{% endblock %}

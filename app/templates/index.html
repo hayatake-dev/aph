@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- 左：検索 -->
+<aside class="search-box">
+  <form action="{{ url_for('search_rooms') }}" method="get">
+    <label>チェックイン</label>
+    <input type="date" name="checkin">
+    <label>チェックアウト</label>
+    <input type="date" name="checkout">
+
+    <label>人数</label>
+    <select name="people">
+      <option value="1">1名</option>
+      <option value="2">2名</option>
+      <option value="3">3名</option>
+    </select>
+
+    <label>部屋</label>
+    <select name="room_type">
+      <option value="シングル">シングル</option>
+      <option value="ツイン">ツイン</option>
+      <option value="ダブル">ダブル</option>
+      <option value="セミダブル">セミダブル</option>
+    </select>
+    <button type="submit" class="search-btn">検索する</button>
+  </form>
+
+  <!-- QRコードエリア -->
+  <div class="qr-in-aside">
+    <p class="qr-caption">スマホで見る（QRを読み取る）</p>
+
+    <!-- クリックでスマホ版 -->
+    <!-- <a href="{{ url_for('mobile') }}" class="qr-link"> -->
+      <img src="{{ url_for('static', filename='img/qrcode_mobile.png') }}"
+           alt="スマホ版QR"
+           class="qr-img">
+    <!-- </a> -->
+    <!-- ダウンロード -->
+    <p class="qr-download">
+      <a href="{{ url_for('static', filename='img/qrcode_mobile.png') }}" download="qrcode_mobile.png">
+        QR画像をダウンロード
+      </a>
+    </p>
+  </div>
+</aside>
+
+<!-- プラン一覧 -->
+  <section class="plan-area">
+    <div class="tab-menu">
+      <h2>部屋一覧</h2>
+      <!-- <h2>部屋一覧</h2> -->
+      <!-- <a class="tab active" href="{{ url_for('index') }}">プラン</a>
+      <a class="tab" href="{{ url_for('rooms_page') }}">お部屋</a> -->
+    </div>
+
+    {% for room in rooms %}
+      <div class="plan-card">
+        <img class="room-img" src="{{ url_for('static', filename=room.img) }}" alt="">
+        <div class="plan-info">
+          <h2 class="plan-title">{{ room.name }} </h2>
+          <ul class="plan-detail">
+            <li>チェックイン：15:00 チェックアウト：10:00</li>
+            <li>支払い：現金決済 / PayPay</li>
+          </ul>
+
+          <p class="desc">レストランで焼きたてのパン・ビュッフェをお楽しみいただけます。</p>
+          <div class="price-box">
+            <span class="price">¥{{ room.price }}</span>
+          </div>
+
+          <div class="btn-box">
+            <a class="detail-btn" href="{{ url_for('detail', room_id=room.id) }}">詳細</a>
+            <a class="reserve-btn" href="{{ url_for('reserve', room_id=room.id) }}">予約</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+{% endblock %}
+ 

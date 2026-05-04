@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{ room.name }} - 詳細{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/detail.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="room-detail-area">
+  <h2>{{ room.name }} の詳細</h2>
+
+  <div class="room-info">
+    <p><strong>タイプ：</strong>{{ room.type }}</p>
+    <p><strong>定員：</strong>{{ room.capacity }} 人</p>
+    <p><strong>料金：</strong>{{ room.price | number_format }} 円 / 泊</p>
+    <p><strong>説明：</strong>{{ room.description or "説明はありません。" }}</p>
+  </div>
+
+  <div class="room-actions">
+    <a href="{{ url_for('reserve', room_id=room.id) }}" class="btn-reserve">この部屋を予約する</a>
+    <a href="{{ url_for('index') }}" class="btn-back">← トップに戻る</a>
+  </div>
+</section>
+{% endblock %}

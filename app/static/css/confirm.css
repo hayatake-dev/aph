@@ -1,0 +1,71 @@
+/* =========================
+   Reserve Confirmation Area
+========================= */
+.plan-area {
+  display: flex;
+  justify-content: center;
+  padding: 30px 15px;
+}
+
+.reserve-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 25px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.reserve-title {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  border-left: 5px solid #003a8f;
+  padding-left: 10px;
+  color: #003a8f;
+}
+
+.reserve-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.reserve-card ul li {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.reserve-card p {
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+
+.reserve-btn {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #003a8f;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.reserve-btn:hover {
+  opacity: 0.9;
+}
+
+.reserve-return {
+  margin-top: 15px;
+  text-align: right;
+}
+
+.reserve-return a {
+  color: #003a8f;
+  text-decoration: none;
+}
+
+.reserve-return a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,1089 @@
+/* ==========================
+   共通設定 (PC/デフォルト)
+========================== */
+html {
+    height: 100%;
+}
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    background: #f2f2f2;
+    /* Sticky Footer 必須設定 */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.header {
+    background: white;
+    padding: 20px 35px;
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom: 1px solid #e1e1e1;
+}
+.header a{
+    text-decoration: none;
+    color: rgb(0, 0, 0); 
+}
+
+/* Sticky Footer 必須設定：コンテンツラッパー */
+.content-wrap {
+    flex-grow: 1; 
+    display: flex; 
+    flex-direction: column;
+}
+
+/* ==========================
+   ナビゲーション
+========================== */
+.navbar {
+    background: #222;
+    padding: 10px 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.navbar a:hover {
+    opacity: 0.7;
+}
+
+.user-name {
+    margin-left: auto;
+    color: #f0c040;
+    font-weight: 700;
+}
+
+/* ==========================
+   共通コンテナ (PCレイアウト)
+========================== */
+.main-container {
+    flex-grow: 1; 
+    display: flex;
+    padding: 25px 35px;
+    gap: 25px;
+}
+
+/* 左パネル */
+.search-box {
+    width: 26%;
+    padding: 22px;
+    border-radius: 8px;
+    background: white;
+    border: 1px solid #e1e1e1;
+    box-sizing: border-box;
+    flex-shrink: 0; /* PCで縮まないように */
+}
+
+/* 右プラン一覧 */
+.plan-area {
+    width: 100%;
+}
+
+/* タブ */
+.tab-menu {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
+.tab {
+    padding-bottom: 8px;
+    cursor: pointer;
+    color: #555;
+    font-weight: 600;
+}
+
+.tab.active {
+    border-bottom: 3px solid black;
+    color: black;
+}
+
+/* 部屋カード共通 (PC版は横並び) */
+.plan-card,
+.room-compact,
+.reserve-card {
+    background: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    padding: 18px;
+    display: flex; 
+    gap: 15px;
+    margin-bottom: 18px;
+    align-items: center;
+}
+
+.room-img {
+    width: 260px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.plan-info {
+    flex: 1;
+}
+
+.plan-title {
+    margin: 0;
+    font-size: 20px;
+}
+
+.plan-detail,
+.desc {
+    margin-top: 10px;
+    line-height: 1.6;
+    font-size: 14px;
+    padding-left: 16px;
+}
+
+/* 金額 */
+.price-box {
+    margin-top: 12px;
+}
+
+.price-label {
+    margin-right: 5px;
+    font-size: 13px;
+}
+
+.price {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* ボタン共通 */
+.detail-btn,
+.reserve-btn,
+.m-btn,
+.submit-button {
+    padding: 9px 18px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+
+.detail-btn {
+    border: 1px solid black;
+    color: black;
+    background: white;
+}
+
+.reserve-btn {
+    background: black;
+    color: white;
+}
+
+/* フォーム要素の共通スタイル */
+label {
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* フォーム入力幅の調整 */
+}
+
+/* ==========================
+   認証・フォーム共通 (ログイン/会員登録)
+========================== */
+.form-section {
+    max-width: 420px; 
+    margin: 40px auto; 
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+    width: 90%; /* スマホ対応の基本設定 */
+    box-sizing: border-box; 
+}
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.auth-form .form-group {
+    margin-bottom: 15px;
+}
+
+.auth-form label {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="password"],
+.auth-form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.auth-form .form-option {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.auth-form .form-option input[type="checkbox"] {
+    width: auto;
+    margin-right: 8px;
+    margin-top: 0;
+}
+
+.auth-form .inline-label {
+    margin: 0;
+    font-weight: normal;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff; 
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.submit-button:hover {
+    background: #0056b3;
+}
+
+.form-separator {
+    margin: 25px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.form-help-links {
+    text-align: center;
+    font-size: 14px;
+}
+
+.form-help-links p {
+    margin: 5px 0;
+}
+
+.form-help-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.form-help-links a:hover {
+    text-decoration: underline;
+}
+
+.register-link {
+    display: block;
+    margin-top: 10px;
+    padding: 8px 0;
+    border: 1px solid #007bff;
+    border-radius: 6px;
+}
+
+/* Flashメッセージ */
+.flash-message {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.flash-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.flash-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.flash-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* ==========================
+   予約ページ専用
+========================== */
+.reserve-title {
+    margin: 0 0 18px;
+    font-size: 22px;
+    border-bottom: 2px solid #e6e6e6;
+    padding-bottom: 8px;
+}
+
+.reserve-error {
+    color: rgb(150, 150, 150);
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+/* 予約フォームのCSSを修正 */
+.reserve-form {
+    display: flex;
+    flex-direction: column; 
+    gap: 18px; 
+    margin-top: 12px;
+    align-items: center;
+}
+
+/* 予約入力グループ（名前、メール、日付、人数）のラッパー */
+.reserve-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; 
+    max-width: 400px; 
+}
+
+.reserve-group label {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.reserve-group input,
+.reserve-group select {
+    border: 1px solid #bdbdbd;
+    border-radius: 6px;
+    font-size: 15px;
+    width: 100%; 
+    padding: 10px;
+}
+
+.reserve-btn {
+    margin-top: 8px;
+    width: 220px;
+    background: #009fe1;
+    color: white;
+    padding: 12px 0;
+    border-radius: 6px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer; 
+}
+
+.reserve-btn:hover {
+    opacity: 0.85;
+}
+
+.reserve-return a {
+    color: #0074c8;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.reserve-return a:hover {
+    text-decoration: underline;
+}
+
+/* 予約一覧 */
+.reserve_list-container {
+    width: 95%;
+    margin: 20px auto;
+}
+
+.reserve_list-title {
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* PC: テーブル表示 */
+.reserve_list-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.reserve_list-table th,
+.reserve_list-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.reserve_list-table th {
+    background: #f4f4f4;
+}
+
+/* PC: カード形式のラッパーは非表示 */
+.reserve_list-cards-wrap {
+    display: none; 
+}
+
+
+/* ボタンの共通スタイル */
+.reserve_list-btn {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    /* モバイルでもボタンが潰れないように設定 */
+    min-width: 80px; 
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: center; /* カード内のボタン用 */
+}
+
+.reserve_list-btn.gray {
+    background: #555;
+    color: #fff;
+}
+
+.reserve_list-btn.red {
+    background: #d9534f;
+    color: #fff;
+}
+
+/* カード内のボタンで使う幅いっぱいにするクラス */
+.reserve_list-btn.full-width {
+    width: 100%;
+}
+
+
+.reserve_list-no-data {
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+/* QR表示 */
+.qr-in-aside {
+    margin-top: 20px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 14px;
+}
+
+.qr-caption {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.qr-img {
+    width: 130px;
+    display: block;
+    margin: auto;
+    border-radius: 4px;
+}
+
+.qr-download a {
+    font-size: 13px;
+    color: #0074c8;
+    text-decoration: none;
+}
+
+.qr-download a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================
+   スマホ用 (モバイル専用要素のスタイル)
+========================== */
+.m-header {
+    background: #2f4f7f;
+    padding: 14px;
+    text-align: center;
+    color: white;
+}
+
+.m-search-section {
+    background: white;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.m-search-section input,
+.m-search-section select {
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.m-search-btn {
+    background: #2f4f7f;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+}
+
+.m-room-section {
+    padding: 12px;
+}
+
+.m-room-card {
+    background: white;
+    padding: 12px;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.m-room-img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.m-btn.detail {
+    border: 1px solid black;
+    color: black;
+    background: white;
+}
+
+.m-btn.reserve {
+    background: black;
+    color: white;
+}
+
+/* ==========================
+   フッターのスタイル
+========================== */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.footer-links a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.9em;
+}
+
+.footer-links a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.reserve-card {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  margin-top: 18px;
+}
+
+/* 左側 */
+.reserve-left {
+  width: 45%;
+}
+
+.reserve-room-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  object-fit: cover;
+}
+
+.reserve-desc {
+  margin-top: 10px;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.reserve-price {
+  margin-top: 16px;
+}
+
+.price-label {
+  font-size: 13px;
+  margin-right: 6px;
+}
+
+.price {
+  font-size: 26px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+/* 右側 */
+.reserve-right {
+  width: 50%;
+}
+
+/* フォームを右側いっぱいに広げる */
+.reserve-form {
+  width: 100%;
+}
+
+.reserve-input-group {
+  width: 100%;
+}
+
+/* ============================================== */
+/* 1. 予約検索セクション */
+/* ============================================== */
+.booking-entry-section {
+    background-color: #e6f0ff; /* 検索フォームエリアの背景色を明るく */
+    padding: 30px 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-form-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-title {
+    text-align: center;
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+}
+
+/* 検索フォームのグリッドレイアウト */
+.booking-form-grid {
+    display: grid;
+    /* PC: 4列 + ボタン */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 15px;
+    align-items: end; /* ボタン以外の要素を下揃えにする */
+}
+
+.form-group-item label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    display: block;
+    font-size: 14px;
+}
+
+.form-group-item input[type="date"],
+.form-group-item select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+/* 検索ボタン */
+.booking-search-button {
+    /* 最後の項目に配置し、全幅を使う */
+    grid-column: 1 / -1; 
+    padding: 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.booking-search-button:hover {
+    background-color: #1e7e34;
+}
+
+/* ============================================== */
+/* 2. 3. 情報セクション共通 */
+/* ============================================== */
+.info-section {
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+}
+
+.info-section-title {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+    padding-bottom: 5px;
+    display: block;
+}
+
+/* --- 特徴セクション --- */
+.features-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    text-align: center;
+}
+
+.feature-item {
+    flex: 1;
+    max-width: 300px;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 2.5em;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* --- おすすめ客室セクション --- */
+.room-recommend-grid {
+    display: grid;
+    /* PC: 3列 */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+}
+
+.room-recommend-card {
+    background: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.room-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-info {
+    padding: 15px;
+}
+
+.room-type-capacity {
+    font-size: 0.9em;
+    color: #666;
+    margin: 5px 0 10px;
+}
+
+.room-price {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #dc3545;
+    margin: 0 0 15px;
+}
+
+.detail-link {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.detail-link:hover {
+    background: #0056b3;
+}
+/* ==========================
+   チェックイン・アウト表示（空室一覧）
+========================== */
+.date-summary {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 25px;
+    background: #fff;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.date-box {
+    background: #fafafa;
+    padding: 10px 18px;
+    border-radius: 6px;
+    border: 1px solid #e2e2e2;
+    text-align: center;
+    min-width: 130px;
+}
+
+.date-label {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.date-value {
+    font-size: 17px;
+    font-weight: bold;
+    color: #222;
+}
+
+.date-summary .arrow {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nights-info {
+    margin-left: auto;
+    font-size: 14px;
+    font-weight: bold;
+    color: #444;
+}
+
+/* モバイル調整 */
+@media (max-width: 768px) {
+    .date-summary {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .nights-info {
+        margin-left: 0;
+    }
+}
+
+/* ============================================== */
+/* レスポンシブ対応 (768px以下) */
+/* ============================================== */
+@media (max-width: 768px) {
+    .booking-entry-section {
+        padding: 20px 10px;
+    }
+    
+    .search-form-card {
+        padding: 15px;
+    }
+    
+    /* 検索フォームの列数を調整 */
+    .booking-form-grid {
+        /* スマホ: 2列 */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px;
+    }
+
+    /* ボタンをモバイルで2列占める */
+    .booking-search-button {
+        grid-column: 1 / -1; 
+    }
+    
+    .info-section {
+        padding: 10px;
+    }
+
+    /* 特徴セクションを縦積みに */
+    .features-grid {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    /* おすすめ客室をモバイルで1列に */
+    .room-recommend-grid {
+        grid-template-columns: 1fr; 
+    }
+    
+    .room-image {
+        height: 220px; /* 画像を大きく見せる */
+    }
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+  .reserve-card {
+    flex-direction: column;
+  }
+  .reserve-left,
+  .reserve-right {
+    width: 100%;
+  }
+}
+
+
+/* =======================================================
+   ⭐️ レスポンシブデザイン: 768px以下のデバイス (タブレット・スマホ) ⭐️
+========================================================== */
+@media (max-width: 768px) {
+    
+    /* --- 共通コンテナの修正 --- */
+    .main-container {
+        /* 横並び (flex) を解除し、縦積みに変更 */
+        flex-direction: column;
+        padding: 15px; /* パディングを調整 */
+        gap: 15px; 
+    }
+
+    /* --- ナビゲーションの修正 --- */
+    .navbar ul {
+        flex-wrap: wrap; 
+        gap: 10px;
+        justify-content: center;
+    }
+    .user-name {
+        margin-left: 0; 
+        width: 100%; 
+        text-align: center;
+    }
+
+    /* --- 左右パネルの修正 --- */
+    .search-box {
+        width: 100%; /* 幅をコンテナいっぱいに広げる */
+        padding: 15px;
+    }
+
+    /* --- 部屋カードの修正 --- */
+    .plan-card,
+    .room-compact,
+    .reserve-card {
+        flex-direction: column; /* 画像と情報を縦積みに */
+        padding: 15px;
+    }
+
+    .room-img {
+        width: 100%; 
+        height: auto;
+        max-height: 200px;
+        margin-bottom: 10px;
+    }
+    
+    .plan-detail,
+    .desc {
+        padding-left: 0; 
+    }
+    
+    /* --- 認証フォームの修正 --- */
+    .form-section {
+        margin: 20px auto; 
+        padding: 20px;
+    }
+
+    /* --- 予約一覧のモバイル対応 (カード形式に切り替え) --- */
+    
+    /* 1. PC用のテーブルを非表示 */
+    .reserve_list-table {
+        display: none; 
+    }
+
+    /* 2. カードラッパーを表示 */
+    .reserve_list-cards-wrap {
+        display: block; 
+    }
+
+    /* 3. カード本体のスタイル定義 */
+    .reserve_list-card {
+        background: white;
+        border: 1px solid #e1e1e1;
+        border-radius: 8px;
+        padding: 15px;
+        margin-bottom: 15px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    /* カードヘッダー (部屋名と価格) */
+    .reserve_list-card .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .reserve_list-card .room-name {
+        font-size: 18px;
+        font-weight: bold;
+    }
+    
+    .reserve_list-card .room-price {
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* 詳細セクション (タイプ、定員など) */
+    .reserve_list-card .card-details p {
+        display: flex;
+        justify-content: space-between;
+        margin: 4px 0;
+        font-size: 14px;
+    }
+
+    .reserve_list-card .detail-label {
+        font-weight: bold;
+        color: #666;
+        flex-shrink: 0; /* ラベルが縮まないように */
+        margin-right: 10px;
+    }
+    
+    .reserve_list-card .detail-value {
+        text-align: right;
+    }
+
+    /* --- ヘッダー・フッターのパディング調整 --- */
+    .header {
+        padding: 15px 20px;
+        font-size: 20px;
+    }
+
+    .footer-content {
+        padding: 0 10px;
+    }
+}

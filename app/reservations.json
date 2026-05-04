@@ -1,0 +1,20 @@
+[
+  {
+    "room_id": 1,
+    "room_name": "スタンダードプラン",
+    "name": "take",
+    "email": "",
+    "checkin": "2025-12-10",
+    "checkout": "2025-12-11",
+    "people": "3"
+  },
+  {
+    "room_id": 3,
+    "room_name": "スイートプラン",
+    "name": "tanaka",
+    "email": "tanaka@gmail.com",
+    "checkin": "2025-12-12",
+    "checkout": "2025-12-12",
+    "people": "1"
+  }
+]

@@ -1,0 +1,58 @@
+/* =========================
+   Room Detail Area
+========================= */
+.room-detail-area {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.room-detail-area h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  border-left: 5px solid #003a8f;
+  padding-left: 10px;
+  color: #003a8f;
+}
+
+.room-info p {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.room-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.room-actions a {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.room-actions .btn-reserve {
+  background-color: #003a8f;
+  color: #fff;
+  width: 200px;
+}
+
+.room-actions .btn-reserve:hover {
+  opacity: 0.9;
+}
+
+.room-actions .btn-back {
+  border: 1px solid #003a8f;
+  color: #003a8f;
+}
+
+.room-actions .btn-back:hover {
+  background-color: #f0f3f8;
+}

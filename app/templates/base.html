@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{% block title %}ホテル予約システム{% endblock %}</title>
+
+  <!-- 共通CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+
+  <!-- ページ専用CSS -->
+  {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+  <!-- =========================
+       Header
+  ========================== -->
+  <header>
+    <div class="header-container">
+      <a href="{{ url_for('top') }}" class="logo">Hotel system</a>
+
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('top') }}">トップ</a></li>
+          <li><a href="{{ url_for('search_rooms') }}">空室検索</a></li>
+
+          {% if session.get('user_id') %}
+            <li><a href="{{ url_for('my_reservations') }}">マイページ</a></li>
+            <li><a href="{{ url_for('logout') }}">ログアウト</a></li>
+          {% else %}
+            <li><a href="{{ url_for('login') }}">ログイン</a></li>
+            <li><a href="{{ url_for('register') }}">会員登録</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================
+       Main
+  ========================== -->
+  <main>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages">
+          {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- =========================
+       Footer
+  ========================== -->
+  <footer>
+    <p>&copy; 2026 Hotel system. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

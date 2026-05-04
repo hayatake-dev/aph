@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}マイページ{% endblock %}
+
+{% block content %}
+<section class="my-reservations">
+  <h2>マイページ - 予約一覧</h2>
+
+  {% if reservations %}
+    <table class="reservation-table">
+      <thead>
+        <tr>
+          <th>予約番号</th>
+          <th>部屋名</th>
+          <th>プラン</th>
+          <th>チェックイン</th>
+          <th>チェックアウト</th>
+          <th>人数</th>
+          <th>合計金額</th>
+          <th>ステータス</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in reservations %}
+        <tr>
+          <td>{{ r.id }}</td>
+          <td>{{ r.room_name }}</td>
+          <td>{{ r.plan_name }}</td>
+          <td>{{ r.checkin }}</td>
+          <td>{{ r.checkout }}</td>
+          <td>{{ r.people }}</td>
+          <td>{{ r.total_price | number_format }} 円</td>
+          <td>{{ r.status }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>まだ予約はありません。</p>
+  {% endif %}
+</section>
+{% endblock %}

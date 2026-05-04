@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}部屋一覧{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/rooms.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<section class="rooms-area">
+  <h2>部屋一覧</h2>
+
+  {% if rooms %}
+    <div class="room-list">
+      {% for room in rooms %}
+      <div class="room-card">
+        <h3>{{ room.name }}</h3>
+        <p>タイプ：{{ room.type }}</p>
+        <p>定員：{{ room.capacity }} 人</p>
+        <p>料金：{{ room.price | number_format }} 円 / 泊</p>
+        <a href="{{ url_for('detail', room_id=room.id) }}" class="btn-detail">詳細を見る</a>
+        <a href="{{ url_for('reserve', room_id=room.id) }}" class="btn-reserve">予約する</a>
+      </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>現在登録されている部屋はありません。</p>
+  {% endif %}
+</section>
+{% endblock %}

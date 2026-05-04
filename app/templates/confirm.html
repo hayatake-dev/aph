@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}予約確認{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/confirm.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="plan-area">
+  <div class="reserve-card">
+    <h2 class="reserve-title">予約内容の最終確認</h2>
+
+    <ul>
+      <li>部屋名：{{ room.name }}</li>
+      <li>プラン：{{ plan.plan_name }}（+{{ plan.price_modifier | number_format }}円）</li>
+      <li>チェックイン：{{ reservation.checkin }}</li>
+      <li>チェックアウト：{{ reservation.checkout }}</li>
+      <li>宿泊日数：{{ nights }}泊</li>
+      <li>人数：{{ reservation.people }} 人</li>
+
+      {% if not session.get('user_id') %}
+        <li>お名前：{{ reservation.name }}</li>
+        <li>メール：{{ reservation.email }}</li>
+      {% else %}
+        <li>お名前：{{ session.username }}</li>
+        <li>メール：{{ session.email }}</li>
+      {% endif %}
+
+      {% if reservation.breakfast %}
+        <li>オプション：朝食付き（+1,000円 / 人）</li>
+      {% endif %}
+    </ul>
+
+    <p class="total-price">
+      合計料金：
+      <strong>{{ reservation.total_price | number_format }} 円</strong>
+    </p>
+
+    <form method="post">
+      <button class="reserve-btn" type="submit">予約を確定する</button>
+    </form>
+
+    <div class="reserve-return">
+      <a href="{{ url_for('reserve', room_id=room.id) }}">← 予約内容を修正する</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
