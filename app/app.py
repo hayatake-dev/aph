@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from datetime import datetime
 import mysql.connector
+import os
 from werkzeug.security import generate_password_hash, check_password_hash
 app = Flask(__name__)
 app.secret_key = 'your_very_secret_key_999'
+
+print("🔥 RUNNING FILE:", __file__)
+print("🔥 CURRENT WORKDIR:", os.getcwd())
 # ==========================
 # Jinja2カスタムフィルター
 # ==========================
@@ -11,6 +15,7 @@ def number_format(value):
     """数字をカンマ区切りにする"""
     try:
         return "{:,}".format(int(value))
+    
     except (ValueError, TypeError):
         return value
 app.jinja_env.filters['number_format'] = number_format

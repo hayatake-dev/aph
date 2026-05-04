@@ -9,7 +9,6 @@
   <!-- 共通CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
 
-
   <!-- ページ専用CSS -->
   {% block extra_css %}{% endblock %}
 </head>
@@ -22,8 +21,7 @@
     <div class="header-container">
       <a href="{{ url_for('top') }}" class="logo">Hotel system</a>
 
-      <nav>
-        
+      <nav>     
         <ul>
           <li><a href="{{ url_for('top') }}">トップ</a></li>
           <li><a href="{{ url_for('search_rooms') }}">空室検索</a></li>

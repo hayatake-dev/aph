@@ -1,0 +1,63 @@
+Date : 2026-05-05 00:04:27
+Directory : /Users/user/Desktop/apahotel2/app
+Total : 29 files,  2532 codes, 298 comments, 468 blanks, all 3298 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| PostCSS    |         11 |      1,607 |        206 |        300 |      2,113 |
+| HTML       |         13 |        502 |         33 |        102 |        637 |
+| Python     |          1 |        295 |         40 |         42 |        377 |
+| JavaScript |          1 |         59 |          0 |         11 |         70 |
+| MS SQL     |          2 |         49 |         19 |         13 |         81 |
+| JSON       |          1 |         20 |          0 |          0 |         20 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                               | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                  |         29 |      2,532 |        298 |        468 |      3,298 |
+| . (Files)                                                          |          4 |        364 |         59 |         55 |        478 |
+| static                                                             |         12 |      1,666 |        206 |        311 |      2,183 |
+| static/css                                                         |         11 |      1,607 |        206 |        300 |      2,113 |
+| static/js                                                          |          1 |         59 |          0 |         11 |         70 |
+| templates                                                          |         13 |        502 |         33 |        102 |        637 |
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                           | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/user/Desktop/apahotel2/app/app.py                           | Python     |        295 |         40 |         42 |        377 |
+| /Users/user/Desktop/apahotel2/app/db22_system.sql                  | MS SQL     |         30 |         14 |          7 |         51 |
+| /Users/user/Desktop/apahotel2/app/db22_system_test.sql             | MS SQL     |         19 |          5 |          6 |         30 |
+| /Users/user/Desktop/apahotel2/app/reservations.json                | JSON       |         20 |          0 |          0 |         20 |
+| /Users/user/Desktop/apahotel2/app/static/css/base.css              | PostCSS    |        191 |         34 |         38 |        263 |
+| /Users/user/Desktop/apahotel2/app/static/css/confirm.css           | PostCSS    |         58 |          3 |         11 |         72 |
+| /Users/user/Desktop/apahotel2/app/static/css/detail.css            | PostCSS    |         47 |          3 |          9 |         59 |
+| /Users/user/Desktop/apahotel2/app/static/css/pattern3.css          | PostCSS    |         97 |         35 |         17 |        149 |
+| /Users/user/Desktop/apahotel2/app/static/css/reserve_list.css      | PostCSS    |         12 |          0 |          2 |         14 |
+| /Users/user/Desktop/apahotel2/app/static/css/reset.css             | PostCSS    |          5 |          0 |          1 |          6 |
+| /Users/user/Desktop/apahotel2/app/static/css/responsive.css        | PostCSS    |          4 |          0 |          1 |          5 |
+| /Users/user/Desktop/apahotel2/app/static/css/result.css            | PostCSS    |         93 |          8 |         18 |        119 |
+| /Users/user/Desktop/apahotel2/app/static/css/rooms.css             | PostCSS    |         64 |         20 |         13 |         97 |
+| /Users/user/Desktop/apahotel2/app/static/css/style.css             | PostCSS    |        849 |         85 |        155 |      1,089 |
+| /Users/user/Desktop/apahotel2/app/static/css/top.css               | PostCSS    |        187 |         18 |         35 |        240 |
+| /Users/user/Desktop/apahotel2/app/static/js/top.js                 | JavaScript |         59 |          0 |         11 |         70 |
+| /Users/user/Desktop/apahotel2/app/templates/base.html              | HTML       |         45 |         12 |         12 |         69 |
+| /Users/user/Desktop/apahotel2/app/templates/confirm.html           | HTML       |         40 |          0 |         10 |         50 |
+| /Users/user/Desktop/apahotel2/app/templates/detail.html            | HTML       |         20 |          0 |          5 |         25 |
+| /Users/user/Desktop/apahotel2/app/templates/index.html             | HTML       |         61 |         10 |         10 |         81 |
+| /Users/user/Desktop/apahotel2/app/templates/login.html             | HTML       |         21 |          0 |          7 |         28 |
+| /Users/user/Desktop/apahotel2/app/templates/my_reservations.html   | HTML       |         39 |          0 |          4 |         43 |
+| /Users/user/Desktop/apahotel2/app/templates/register.html          | HTML       |         34 |          0 |         10 |         44 |
+| /Users/user/Desktop/apahotel2/app/templates/reserve.html           | HTML       |         50 |          0 |         12 |         62 |
+| /Users/user/Desktop/apahotel2/app/templates/reserve_completed.html | HTML       |         22 |          0 |          6 |         28 |
+| /Users/user/Desktop/apahotel2/app/templates/reserve_list.html      | HTML       |         32 |          2 |          4 |         38 |
+| /Users/user/Desktop/apahotel2/app/templates/rooms.html             | HTML       |         26 |          0 |          5 |         31 |
+| /Users/user/Desktop/apahotel2/app/templates/search_result.html     | HTML       |         45 |          0 |          9 |         54 |
+| /Users/user/Desktop/apahotel2/app/templates/top.html               | HTML       |         67 |          9 |          8 |         84 |
+| Total                                                              |            |      2,532 |        298 |        468 |      3,298 |
++--------------------------------------------------------------------+------------+------------+------------+------------+------------+
