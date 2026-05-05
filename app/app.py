@@ -219,6 +219,67 @@ def my_reservations():
 
     return render_template("my_reservations.html", reservations=reservations)
 
+
+
+
+@app.route("/search")
+def search_rooms():
+    checkin_str = request.args.get("checkin")
+    checkout_str = request.args.get("checkout")
+    people = int(request.args.get("people", 1))
+    room_type = request.args.get("room_type")
+
+    if not checkin_str or not checkout_str:
+        return redirect(url_for("index"))
+
+    try:
+        checkin = datetime.strptime(checkin_str, "%Y-%m-%d").date()
+        checkout = datetime.strptime(checkout_str, "%Y-%m-%d").date()
+    except ValueError:
+        return redirect(url_for("index"))
+
+    conn = get_db_connection()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM rooms")
+    rooms = cursor.fetchall()
+    cursor.execute("SELECT * FROM reservations")
+    reservations = cursor.fetchall()
+    cursor.close()
+    conn.close()
+
+    available_rooms = []
+    fallback_rooms = []
+
+    for room in rooms:
+        if room["capacity"] < people:
+            continue
+        if room_type and room["type"] != room_type:
+            continue
+
+        is_available = True
+        for r in reservations:
+            if r["room_id"] != room["id"]:
+                continue
+            r_checkin = r["checkin"]
+            r_checkout = r["checkout"]
+            if not (checkout <= r_checkin or checkin >= r_checkout):
+                is_available = False
+                break
+
+        if is_available:
+            available_rooms.append(room)
+        else:
+            fallback_rooms.append(room)
+
+    return render_template(
+        "search_result.html",
+        rooms=available_rooms,
+        fallback_rooms=fallback_rooms,
+        checkin=checkin_str,
+        checkout=checkout_str,
+        people=people
+    )
+
 # ==========================
 # 実行
 # ==========================
